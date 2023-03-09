@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
-      let weatherData = {
-        city: "Moshi",
-        temperature: 26,
-        date: "Friday 17th of February 16:27",
-        description: "cloudy",
-        humidity: 70,
-        wind: 30,
-        imgUrl: "https://cdn-icons-png.flaticon.com/512/1779/1779940.png",
-      };
+export default function Weather(props) {
+      
+      const [ready, setReady] = useState(false)
+      const [weatherData, setWeatherData] = useState({ready: false})
+    function handleResponse(response){
+    setReady(true);
+    setWeatherData({
+        temperature: Math.round(response.data.temperature.current),
+        wind: Math.round(response.data.wind.speed),
+        humidity: response.data.temperature.humidity,
+        description: response.data.condition.description,
+        imgUrl: response.data.condition.icon_url,
+        icon: response.data.condition.icon,
+        city: response.data.city
+    })
+    }
+     if (ready){
   return (
     <div className="weather-app-wrapper">
       <div className="card">
@@ -37,7 +45,7 @@ export default function Weather() {
           <div className="clearfix weather-temperature">
             <img
               src={weatherData.imgUrl}
-              alt="weather-icon"
+              alt={weatherData.icon}
               className="float-left icon"
             />
             <strong className="temperature">{weatherData.temperature}</strong>
@@ -81,7 +89,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -95,7 +103,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -109,7 +117,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -123,7 +131,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -137,7 +145,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -151,7 +159,7 @@ export default function Weather() {
                 <div className="weather-forecast-day">Wed</div>
                 <img
                   src={weatherData.imgUrl}
-                  alt="weather-icon"
+                  alt={weatherData.icon}
                   className="icon-forecast"
                 />
                 <span className="weather-forecast-temperature-min forecast-min">
@@ -167,4 +175,9 @@ export default function Weather() {
       </div>
     </div>
   );
+}else{
+     const apiKey = "524437caf2bf7e4a9413b557e3t8od0a";
+      const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(handleResponse);
+}
 }
