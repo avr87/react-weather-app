@@ -36,24 +36,7 @@ export default function WeatherInfo(props) {
           </ul>
         </div>
       </div>
-      <div className="weather-forecast forecast">
-        <div className="row">
-          <div className="col-2">
-            <div className="weather-forecast-day">Wed</div>
-            <img
-              src={props.data.imgUrl}
-              alt={props.data.icon}
-              className="icon-forecast"
-            />
-            <span className="weather-forecast-temperature-min forecast-min">
-              11˚
-            </span>
-            <span className="weather-forecast-temperature-max forecast-max">
-              13˚
-            </span>
-          </div>
-        </div>
-      </div>
+      
     </div>
   );
 }

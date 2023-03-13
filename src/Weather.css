@@ -97,29 +97,6 @@ li:first-letter {
   text-decoration: none;
 }
 
-.forecast {
-  margin-top: 30px;
-  text-align: center;
-}
-.icon-forecast {
-  height: 60px;
-  width: 60px;
-}
 
-.weather-forecast-day {
-  color: white;
-  opacity: 0.8;
-  padding-top: 20px;
-}
-
-.weather-forecast-temperature-min {
-  font-size: 13px;
-  color: #b5736c;
-}
-
-.weather-forecast-temperature-max {
-  font-size: 13px;
-  color: white;
-}
 
 
