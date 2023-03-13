@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
 import "./Weather.css";
 
 export default function Weather(props) {
-  const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity)
+  
   function handleResponse(response) {
-    setReady(true);
     setWeatherData({
+      ready: true,
       temperature: Math.round(response.data.temperature.current),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
@@ -19,18 +20,36 @@ export default function Weather(props) {
       date: new Date(response.data.time * 1000),
     });
   }
-  if (ready) {
+
+  function handleSubmit(event){
+    event.preventDefault();
+     search();
+
+  }
+  function handleChangeCity(event){
+    setCity(event.target.value);
+   
+  }
+
+ function search() {
+      const apiKey = "524437caf2bf7e4a9413b557e3t8od0a";
+      const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(handleResponse);
+    }
+
+  if (weatherData.ready) {
     return (
       <div className="weather-app-wrapper">
         <div className="card">
           <div className="card-body">
-            <form className="mb-4 search-form">
+            <form className="mb-4 search-form" onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-9">
                   <input
                     type="search"
                     placeholder="Search city...."
                     className="form-control city-input"
+                    onChange={handleChangeCity}
                   />
                 </div>
                 <div className="col-3">
@@ -42,71 +61,12 @@ export default function Weather(props) {
                 </div>
               </div>
             </form>
-            <h1> {weatherData.city}</h1>
-            <div className="clearfix weather-temperature">
-              <img
-                src={weatherData.imgUrl}
-                alt={weatherData.icon}
-                className="float-left icon"
-              />
-              <strong className="temperature">{weatherData.temperature}</strong>
-              <small>
-                <a href="/" id="celsius-link" className="active celsius">
-                  ˚C
-                </a>{" "}
-                |
-                <a href="/" id="fahrenheit-link" className="fahrenheit">
-                  ˚F
-                </a>
-              </small>
-            </div>
-            <div className="row information">
-              <div className="col-6">
-                <ul>
-                  <li>
-                    <FormattedDate date={weatherData.date} />{" "}
-                  </li>
-                  <li className="description">{weatherData.description}</li>
-                  <li className="humidity">
-                    Humidity: {weatherData.humidity}%
-                  </li>
-                  <li className="windspeed">
-                    Wind: {weatherData.wind}
-                    mph
-                  </li>
-                </ul>
-              </div>
-              <div className="col-6 info">
-                <ul>
-                  <li className="updatedDate">Last Updated:</li>
-                </ul>
-              </div>
-            </div>
-            <div className="weather-forecast forecast">
-              <div className="row">
-                <div className="col-2">
-                  <div className="weather-forecast-day">Wed</div>
-                  <img
-                    src={weatherData.imgUrl}
-                    alt={weatherData.icon}
-                    className="icon-forecast"
-                  />
-                  <span className="weather-forecast-temperature-min forecast-min">
-                    11˚
-                  </span>
-                  <span className="weather-forecast-temperature-max forecast-max">
-                    13˚
-                  </span>
-                </div>
-              </div>
-            </div>
+            <WeatherInfo data={weatherData} />
           </div>
         </div>
       </div>
     );
   } else {
-    const apiKey = "524437caf2bf7e4a9413b557e3t8od0a";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+search();
   }
 }
