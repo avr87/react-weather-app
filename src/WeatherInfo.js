@@ -1,5 +1,8 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
+
+
 
 export default function WeatherInfo(props) {
   return (
@@ -11,34 +14,25 @@ export default function WeatherInfo(props) {
           alt={props.data.icon}
           className="float-left icon"
         />
-        <strong className="temperature">{props.data.temperature}</strong>
-        <small>
-          <a href="/" id="celsius-link" className="active celsius">
-            ˚C
-          </a>{" "}
-          |
-          <a href="/" id="fahrenheit-link" className="fahrenheit">
-            ˚F
-          </a>
-        </small>
+        <WeatherTemperature celsius={props.data.temperature} />
       </div>
       <div className="row information">
         <div className="col-6">
           <ul>
             <li>
+              Last Updated:
               <FormattedDate date={props.data.date} />{" "}
             </li>
+          </ul>
+        </div>
+        <div className="col-6 info">
+          <ul>
             <li className="description">{props.data.description}</li>
             <li className="humidity">Humidity: {props.data.humidity}%</li>
             <li className="windspeed">
               Wind: {props.data.wind}
               mph
             </li>
-          </ul>
-        </div>
-        <div className="col-6 info">
-          <ul>
-            <li className="updatedDate">Last Updated:</li>
           </ul>
         </div>
       </div>
