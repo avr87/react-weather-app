@@ -89,3 +89,12 @@ li:first-letter {
   font-size: 13px;
   
 }
+
+@media(max-width:600px){
+  .information{
+    font-size:10px;
+  }
+  .last-updated-time{
+    font-size:10px
+  }
+}

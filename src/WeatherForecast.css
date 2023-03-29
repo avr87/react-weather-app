@@ -6,8 +6,8 @@
   height: 60px;
   width: 60px;
 }
-.forecast-day{
-  background-color:rgb(255, 239, 188,0.3);
+.forecast-day {
+  background-color: rgb(255, 239, 188, 0.3);
   border-radius: 10px;
   padding-bottom: 10px;
 }
@@ -26,4 +26,12 @@
 .weather-forecast-temperature-max {
   font-size: 13px;
   color: white;
+}
+@media (max-width: 600px) {
+  .forecast-day {
+    margin-bottom: 10px;
+  }
+  .weather-forecast-day{
+    padding-top: 5px;
+  }
 }
