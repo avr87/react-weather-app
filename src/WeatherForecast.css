@@ -6,6 +6,11 @@
   height: 60px;
   width: 60px;
 }
+.forecast-day{
+  background-color:rgb(255, 239, 188,0.3);
+  border-radius: 10px;
+  padding-bottom: 10px;
+}
 
 .weather-forecast-day {
   color: white;

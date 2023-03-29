@@ -6,16 +6,20 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Weather App</h1>
-        <Weather  defaultCity="Moshi"/>
+        
+        <Weather defaultCity="Moshi" />
         <footer>
-          This project is created by Anna van Ruiten and is{" "}
+          This project was created by Anna van Ruiten and is{" "}
           <a
             href="https://luminous-mousse-9fab79.netlify.app"
             target="_blank"
             rel="noreferrer"
           >
-            open-sourced on Github.
+            open-sourced on Github
+          </a>{" "}
+          and{" "}
+          <a href="https://luminous-mousse-9fab79.netlify.app/">
+            hosted on Netlify
           </a>
         </footer>
       </div>

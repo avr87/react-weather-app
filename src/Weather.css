@@ -13,7 +13,7 @@
   border: 1px solid hwb(6 42% 29%);
   border-radius: 50px;
   box-shadow: 1px 2px 3px 4px rgba(181, 115, 108, 0.4);
-  background-color: rgba(255, 159, 36, 0.9);
+  background-color: rgba(255, 159, 36, 0.8);
 }
 
 .city-input {
@@ -28,13 +28,14 @@
   color: white;
 }
 h1 {
-  color: white;
+  color:white;
   font-size: 38px;
   font-weight: 300;
   line-height: 29px;
   line-height: 48px;
   margin-bottom: 0;
 }
+
 ul {
   margin: 0;
   padding: 0;
@@ -47,19 +48,16 @@ li:first-letter {
   text-transform: capitalize;
 }
 .weather-temperature img {
-  margin-right: 10px;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  vertical-align: top;
+  height: 80px;
+  width: 80px;
 }
 .weather-temperature strong {
-  color: white;
-  display: inline;
-  font-size: 48px;
-  line-height: 56px;
-  font-weight: 400;
+  color:white;
+  font-size: 45px;
+  line-height: 40px;
+  font-weight: 350;
   vertical-align: top;
+
 }
 
 .weather-temperature small {
@@ -72,12 +70,23 @@ li:first-letter {
 }
 .information {
   margin-top: 20px;
-  color: #ffefbc;
+  color:#b5736c;
   font-size: 13px;
+  background-color:rgb(255, 239, 188,0.3);
+  border-radius: 20px;
+  padding:12px;
+  text-align: right;
+  
 }
 
-.info {
-  text-align: right;
+
+.info-time{
+  color:#b5736c;
+ 
+}
+.last-updated-time{
+  font-size: 16px;
+  
 }
 .celsius {
   text-decoration: none;
