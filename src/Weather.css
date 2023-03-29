@@ -27,6 +27,12 @@
   border-style: hidden;
   color: white;
 }
+.search-button:hover {
+  background-color: white;
+  color: #b5736c;
+  border-color: #b5736c;
+  border-style: solid;
+}
 h1 {
   color: white;
   font-size: 38px;
@@ -74,12 +80,12 @@ li:first-letter {
   background-color: rgb(255, 239, 188, 0.3);
   border-radius: 20px;
   padding: 12px;
-  text-align: right;
 }
 
 .info-time {
   color: #b5736c;
 }
 .last-updated-time {
-  font-size: 16px;
+  font-size: 13px;
+  
 }

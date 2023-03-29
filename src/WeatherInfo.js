@@ -18,17 +18,18 @@ export default function WeatherInfo(props) {
           </div>
         </div>
         <div className="col-4 information info">
-          
           <ul className="info-time">
-            <li >
+            <li>
               Last Updated:
-              <div className="last-updated-time">
-                <FormattedDate date={props.data.date} />{" "}
+              <div className="last-updated-time ">
+                <strong>
+                  <FormattedDate date={props.data.date} />{" "}
+                </strong>
               </div>
             </li>
           </ul>
           <br />
-          
+
           <ul>
             <li className="description">{props.data.description}</li>
             <li className="humidity">Humidity: {props.data.humidity}%</li>
