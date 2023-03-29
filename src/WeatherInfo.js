@@ -6,7 +6,7 @@ export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
       <div className="row">
-        <div className="col-8">
+        <div className="col-8 primary-information">
           <h1> {props.data.city}</h1>
           <div className="clearfix weather-temperature">
             <img
@@ -17,7 +17,8 @@ export default function WeatherInfo(props) {
             <WeatherTemperature celsius={props.data.temperature} />
           </div>
         </div>
-        <div className="col-4 information info">
+        <div className="col-4">
+        <div className="information info">
           <ul className="info-time">
             <li>
               Last Updated:
@@ -40,6 +41,7 @@ export default function WeatherInfo(props) {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   );
 }

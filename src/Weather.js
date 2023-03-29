@@ -46,7 +46,7 @@ export default function Weather(props) {
           <div className="card-body">
             <form className="mb-4 search-form" onSubmit={handleSubmit}>
               <div className="row">
-                <div className="col-9">
+                <div className="col-9 input-bar">
                   <input
                     type="search"
                     placeholder="Search city...."
@@ -54,7 +54,7 @@ export default function Weather(props) {
                     onChange={handleChangeCity}
                   />
                 </div>
-                <div className="col-3">
+                <div className="col-3 submit-button">
                   <input
                     className="btn btn-primary search-button"
                     type="submit"

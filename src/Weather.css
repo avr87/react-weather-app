@@ -3,7 +3,7 @@
 }
 
 .weather-app-wrapper {
-  max-width: 600px;
+  max-width: 550px;
   margin: 30px auto;
 }
 
@@ -32,6 +32,9 @@
   color: #b5736c;
   border-color: #b5736c;
   border-style: solid;
+}
+.primary-information{
+  padding: 0px 0px 0px 12px;
 }
 h1 {
   color: white;
@@ -96,5 +99,21 @@ li:first-letter {
   }
   .last-updated-time{
     font-size:10px
+  }
+  .card{
+    padding:15px
+  }
+  .input-bar{
+    padding: 5 px;
+  }
+  .submit-button{
+    padding:0px;
+  }
+  .primary-information{
+    padding: 0px 0px 0px 12px;
+    
+  }
+  .info{
+    text-align: center;
   }
 }
