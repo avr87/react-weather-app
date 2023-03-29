@@ -28,7 +28,7 @@
   color: white;
 }
 h1 {
-  color:white;
+  color: white;
   font-size: 38px;
   font-weight: 300;
   line-height: 29px;
@@ -52,16 +52,15 @@ li:first-letter {
   width: 80px;
 }
 .weather-temperature strong {
-  color:white;
+  color: white;
   font-size: 45px;
   line-height: 40px;
   font-weight: 350;
   vertical-align: top;
-
 }
 
 .weather-temperature small {
-  color: #b5736c;
+  color: white;
   display: inline;
   line-height: 22px;
   font-size: 16px;
@@ -70,42 +69,17 @@ li:first-letter {
 }
 .information {
   margin-top: 20px;
-  color:#b5736c;
+  color: #b5736c;
   font-size: 13px;
-  background-color:rgb(255, 239, 188,0.3);
+  background-color: rgb(255, 239, 188, 0.3);
   border-radius: 20px;
-  padding:12px;
+  padding: 12px;
   text-align: right;
-  
 }
 
-
-.info-time{
-  color:#b5736c;
- 
+.info-time {
+  color: #b5736c;
 }
-.last-updated-time{
+.last-updated-time {
   font-size: 16px;
-  
 }
-.celsius {
-  text-decoration: none;
-  color: #b5736c;
-}
-.fahrenheit {
-  text-decoration: none;
-  color: #b5736c;
-}
-
-.weather-temperature .active {
-  color: white;
-  text-decoration: none;
-}
-
-.weather-temperature .active:hover {
-  text-decoration: none;
-}
-
-
-
-
